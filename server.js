@@ -1,5 +1,4 @@
 var express = require('express');
-var cors = require('cors');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
@@ -7,7 +6,6 @@ const port = 4200;
 var router = express.Router();  
 
 app.use('/api', router);
-app.use(cors());
 
 var welcome = {
     data: "welcome to the ProjectAuxAPI"
