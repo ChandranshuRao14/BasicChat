@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import openSocket from 'socket.io-client';
-const socket = openSocket('http://localhost:8080')
+const socket = openSocket('http://localhost:8080/')
 
 class App extends Component {
 
