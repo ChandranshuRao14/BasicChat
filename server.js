@@ -2,13 +2,13 @@ var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
-const port = 4200;
+const port = 8080;
 var router = express.Router();  
 
-app.use('/api', router);
+app.use('/', router);
 
 var welcome = {
-    data: "welcome to the ProjectAuxAPI"
+    data: "welcome to the BasicChatAPI"
 };
 
 var obj = {
@@ -16,7 +16,7 @@ var obj = {
 };
 
 server.listen(port, () => 
-    console.log(`Server listening on port ${port}...`)
+    console.log(`BasicChat Server listening on port ${port}...`)
 );
 
 router.get('/', (req, res) => {

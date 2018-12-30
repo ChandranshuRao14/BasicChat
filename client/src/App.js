@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import openSocket from 'socket.io-client';
-const socket = openSocket('http://localhost:4200')
+const socket = openSocket('http://localhost:8080')
 
 class App extends Component {
 
@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   callApi = async () => {
-    const response = await fetch('http://localhost:4200/');
+    const response = await fetch('http://localhost:8080/');
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
     return body;
@@ -59,14 +59,14 @@ class App extends Component {
     return (
       <div className="App" className="container-fluid">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>Chat!</h1>
+        <h1>Chat Away!</h1>
         <form className="row">
           <input id="message" className="col-md-4 form-control" type="text" placeholder="Search for a song..." onChange={this.updateInput}></input>
           <button type="button" className="btn btn-primary" onClick={this.handleSubmit}>Send</button>
         </form>
         <ul id="queue" className="col-md-8 col-md-offset-2">
           {this.state.items.map(function(d, idx){
-          return (<li key={idx}>{d.name}</li>)
+          return (<li className="message" key={idx}>{d.name}</li>)
           })}
         </ul>
       </div>
