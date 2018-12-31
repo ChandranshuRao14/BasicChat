@@ -1,0 +1,8 @@
+li {
+    list-style: none;
+    width: 100vw;
+  }
+
+  li:nth-child(odd) {
+    background: #eee;
+  }
