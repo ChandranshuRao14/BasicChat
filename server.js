@@ -8,6 +8,7 @@ app.use(express.static('public'));
 
 server.listen(port, () => 
     console.log(`BasicChat Server listening on port ${port}...`)
+    console.log('Running server...')
 );
 
 app.get('/', (req, res) => {
